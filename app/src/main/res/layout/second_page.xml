@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlue"
+    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/statistics"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="200dp"
+        android:id="@+id/graph2_image"
+        >
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slide_2_title"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/graph2_image"
+        android:layout_marginTop="12dp"
+        android:id="@+id/graph2_title"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slide_2_description"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/graph2_title"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:id="@+id/graph2_description"
+        >
+    </TextView>
+
+
+
+</RelativeLayout>
