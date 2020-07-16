@@ -52,6 +52,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private int delay;
     private int score;
     private int know;
+    private int questionTrueKnow;
+    private int questionFalseKnow;
     private String optionTrueAnswer;
     private TextView scoreText;
     private TextView timeText;
@@ -155,6 +157,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     private void init() {
+        questionTrueKnow=0;
+        questionFalseKnow=0;
         maxScore = 0;
         know=0;
         level = 1;
@@ -243,7 +247,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         saveMaxScore();
         AlertDialog.Builder alert = new AlertDialog.Builder(GameActivity.this);
         alert.setTitle("Restart?");
-        alert.setMessage("Are you sure to restart game?");
+        alert.setMessage("Are you sure to restart game?\nTrue : "+questionTrueKnow+"\t\t\t"+"False : "+questionFalseKnow);
         alert.setCancelable(false);
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
@@ -445,6 +449,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
            btnNotClick.setBackground(drawableRed);
            increaseScore();
            know++;
+           questionTrueKnow++;
            mTimeLeftInMillis +=2000;
            startTimer();
 
@@ -454,6 +459,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
            pauseTimer();
            btnClick.setBackground(drawableRed);
            btnNotClick.setBackground(drawableGreen);
+           questionFalseKnow++;
            mTimeLeftInMillis -=3500;
            startTimer();
        }
